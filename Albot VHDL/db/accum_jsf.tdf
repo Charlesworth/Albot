@@ -1,0 +1,58 @@
+--altaccumulate CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 DEVICE_FAMILY="Cyclone II" LPM_REPRESENTATION="UNSIGNED" WIDTH_IN=8 WIDTH_OUT=16 aclr clken clock cout data result
+--VERSION_BEGIN 11.0SP1 cbx_altaccumulate 2011:07:03:21:07:09:SJ cbx_cycloneii 2011:07:03:21:07:09:SJ cbx_lpm_add_sub 2011:07:03:21:07:09:SJ cbx_mgl 2011:07:03:21:10:12:SJ cbx_stratix 2011:07:03:21:07:09:SJ cbx_stratixii 2011:07:03:21:07:09:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneii_lcell_comb (cin, dataa, datab, datac, datad)
+WITH ( LUT_MASK, SUM_LUTC_INPUT)
+RETURNS ( combout, cout);
+
+--synthesis_resources = lut 16 reg 16 
+SUBDESIGN accum_jsf
+( 
+	aclr	:	input;
+	clken	:	input;
+	clock	:	input;
+	cout	:	output;
+	data[7..0]	:	input;
+	result[15..0]	:	output;
+) 
+VARIABLE 
+	acc_cella[15..0] : cycloneii_lcell_comb
+		WITH (
+			LUT_MASK = "96E8",
+			SUM_LUTC_INPUT = "cin"
+		);
+	acc_ffa[15..0] : dffe;
+	data_wire[15..0]	: WIRE;
+	sload	: NODE;
+
+BEGIN 
+	acc_cella[].cin = ( acc_cella[14..0].cout, B"0");
+	acc_cella[].dataa = acc_ffa[].q;
+	acc_cella[].datab = data_wire[];
+	acc_cella[].datad = B"1111111111111111";
+	acc_ffa[].clk = clock;
+	acc_ffa[].clrn = (! aclr);
+	acc_ffa[].d = acc_cella[].combout;
+	acc_ffa[].ena = clken;
+	cout = ((! sload) & acc_cella[15].cout);
+	data_wire[] = ( B"00000000", data[]);
+	result[] = acc_ffa[].q;
+	sload = GND;
+END;
+--VALID FILE

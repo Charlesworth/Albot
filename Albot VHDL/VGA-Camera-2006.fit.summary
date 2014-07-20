@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Nov 09 16:45:45 2012
+Quartus II Version : 11.0 Build 208 07/03/2011 SP 1 SJ Full Version
+Revision Name : VGA-Camera-2006
+Top-level Entity Name : VGA-Camera-2006
+Family : Cyclone II
+Device : EP2C8T144C7
+Timing Models : Final
+Total logic elements : 2,455 / 8,256 ( 30 % )
+    Total combinational functions : 1,297 / 8,256 ( 16 % )
+    Dedicated logic registers : 1,877 / 8,256 ( 23 % )
+Total registers : 1877
+Total pins : 35 / 85 ( 41 % )
+Total virtual pins : 0
+Total memory bits : 59,904 / 165,888 ( 36 % )
+Embedded Multiplier 9-bit elements : 0 / 36 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

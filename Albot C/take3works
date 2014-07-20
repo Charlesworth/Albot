@@ -1,0 +1,120 @@
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include "PWM.h"
+#include "PID.h"
+#include <util/delay.h>
+#define F_CPU 8000000UL			// dewnoting 8Mz CPU
+
+
+int main(void)
+{	
+    Motor_Init();
+	PID_Init();
+	SetPIDInput(0,0);
+	
+	DDRB = 0xFF;		//[1111 1111] Set Port B as outputs - 0xFF data direction register B
+	DDRC = 0x80;		//[1000 0000] Set PORTC bits 0 to 6 as inputs and bit 7 as output 
+	PORTC = 0x7f;		//[0111 1111] Set internal pull-ups and bit 7 to 0
+	
+	PORTC &= ~(1<<7);  //set PORTC pin7 handshake bit to a 0
+	PORTB &= ~(1<<7);  //set PORTB pin7 LED off
+
+	const int LineFollowSpeed = -60; // The line follower optical detectors are on the back!
+	unsigned char Command;
+	int RgtWheelSpeed  = 0;
+	int LftWheelSpeed  = 0;
+	
+	sei(); // Set Interrupts (switch on interrupts)
+		
+	for(;;) { // Execute infinite loop (at high speed)
+	
+		Command = PINC;         // Read from FPGA ...
+		PORTB = Command;		// ... reflect input to ALbot LEDs
+
+		//PORTC= 0x3;		//(mask off the bits not used in PORTC)
+		PORTC= Command; //send the same data to the motorcontroller PID
+
+		if ( PIDInterruptFlag ) { // If the 250Hz timer interrupt has fired and set the
+		                           // PID interrupt flag ...
+								   
+								   // ... send control to the motors
+								
+								   // ... but first reset the flag ...
+	
+			cli();                 // Clear interrupts (switch off interrupts)
+			PIDInterruptFlag = 0;  // Clear interrupt flag
+			sei();                 // Set interrupts (switch on interrupts)
+				
+//      	Decode the command sent from the FPGA				
+
+//          ****************************************************************
+//          Change this to your code to control the robot from the sensors
+
+        // LftWheelSpeed =  LineFollowSpeed;  // Rotate very slowly
+		//	RgtWheelSpeed =  LineFollowSpeed;
+
+			if(PORTC== 3)
+				{
+					LftWheelSpeed =  LineFollowSpeed;  // Rotate very slowly
+					RgtWheelSpeed =  LineFollowSpeed;
+
+				for(i=0;i<=250;i++)
+						{
+							for(j=0;j<=25000;j++){}
+						}
+						
+
+				}
+
+			else(PORTC== 1)
+				{
+					LftWheelSpeed =  -LineFollowSpeed;  // Rotate very slowly left
+					RgtWheelSpeed =  LineFollowSpeed;
+			
+				for(i=0;i<=250;i++)
+						{
+							for(j=0;j<=25000;j++){}
+						}
+				}
+					
+			else(PORTC== 2)
+				{
+					LftWheelSpeed =  LineFollowSpeed;  // Rotate very slowly [this is the oone being triggered!]
+					RgtWheelSpeed =  -LineFollowSpeed;
+				
+				for(i=0;i<=25;i++)
+						{
+							for(j=0;j<=25000;j++){}
+						}
+				}
+			
+			else(PORTC== 0)
+				{
+					LftWheelSpeed =  0; // Rotate very slowly implement search algorythm
+					RgtWheelSpeed =  0;
+					
+				for(i=0;i<=25;i++)
+						{
+							for(j=0;j<=25000;j++){}
+						}
+				}
+				
+
+
+//          End change
+//          ****************************************************************			
+
+//          Request the speed for the PID to achieve		
+			
+			SetPIDInput ( LftWheelSpeed, RgtWheelSpeed );
+
+//          Let it do its work adjusting the voltages to achieve the given speed
+
+			PIDHeartBeat();
+			
+		}
+	}
+	
+	return 0;
+}
+

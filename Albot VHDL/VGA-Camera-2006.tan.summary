@@ -1,0 +1,146 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.343 ns
+From           : D7_1
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_trigger_in_reg[0]
+From Clock     : --
+To Clock       : D7_2
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.340 ns
+From           : ChannelProcessor:inst10|PixelMATCH
+To             : LED2
+From Clock     : D7_2
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.948 ns
+From           : D7_ALBot
+To             : D6_ALBot
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.173 ns
+From           : altera_internal_jtag
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[3]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'D7_2'
+Slack          : 18.519 ns
+Required Time  : 24.00 MHz ( period = 41.666 ns )
+Actual Time    : 216.08 MHz ( period = 4.628 ns )
+From           : SyncProcessor:inst|ColumnCounter[4]
+To             : ChannelProcessor:inst2|TESTpixCOUNT[1]
+From Clock     : D7_2
+To Clock       : D7_2
+Failed Paths   : 0
+
+Type           : Clock Setup: 'D7_1'
+Slack          : 63983.985 ns
+Required Time  : 0.02 MHz ( period = 63987.714 ns )
+Actual Time    : 268.17 MHz ( period = 3.729 ns )
+From           : SyncProcessor:inst|RowCounter[2]
+To             : SyncProcessor:inst|RowCounter[7]
+From Clock     : D7_1
+To Clock       : D7_1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'D6_1'
+Slack          : 63999.130 ns
+Required Time  : 0.02 MHz ( period = 64000.000 ns )
+Actual Time    : Restricted to 405.02 MHz ( period = 2.469 ns )
+From           : SyncProcessor:inst|u2
+To             : SyncProcessor:inst|u3
+From Clock     : D6_1
+To Clock       : D6_1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SyncProcessor:inst|u4'
+Slack          : 329992.536 ns
+Required Time  : 0.00 MHz ( period = 330000.000 ns )
+Actual Time    : 133.98 MHz ( period = 7.464 ns )
+From           : ChannelProcessor:inst2|PIXmeanTEST[3]
+To             : ChannelProcessor:inst2|PIXFlag
+From Clock     : SyncProcessor:inst|u4
+To Clock       : SyncProcessor:inst|u4
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 86.22 MHz ( period = 11.598 ns )
+From           : sld_hub:sld_hub_inst|sld_dffex:\GEN_IRF:1:IRF|Q[3]
+To             : sld_hub:sld_hub_inst|hub_tdo_reg
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'D7_2'
+Slack          : -1.489 ns
+Required Time  : 24.00 MHz ( period = 41.666 ns )
+Actual Time    : N/A
+From           : lpm_dff1:inst6|lpm_ff:lpm_ff_component|dffs[4]
+To             : ChannelProcessor:inst2|PixelMATCH
+From Clock     : D7_2
+To Clock       : D7_2
+Failed Paths   : 139
+
+Type           : Clock Hold: 'D7_1'
+Slack          : -1.004 ns
+Required Time  : 0.02 MHz ( period = 63987.714 ns )
+Actual Time    : N/A
+From           : debouncer:inst13|u2
+To             : debouncer:inst13|carry1
+From Clock     : D7_1
+To Clock       : D7_1
+Failed Paths   : 1
+
+Type           : Clock Hold: 'D6_1'
+Slack          : 0.622 ns
+Required Time  : 0.02 MHz ( period = 64000.000 ns )
+Actual Time    : N/A
+From           : SyncProcessor:inst|u2
+To             : SyncProcessor:inst|u3
+From Clock     : D6_1
+To Clock       : D6_1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'SyncProcessor:inst|u4'
+Slack          : 1.980 ns
+Required Time  : 0.00 MHz ( period = 330000.000 ns )
+Actual Time    : N/A
+From           : ChannelProcessor:inst2|PIXmeanTEST[9]
+To             : ChannelProcessor:inst2|PIXFlag
+From Clock     : SyncProcessor:inst|u4
+To Clock       : SyncProcessor:inst|u4
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 140
+
+--------------------------------------------------------------------------------------
+

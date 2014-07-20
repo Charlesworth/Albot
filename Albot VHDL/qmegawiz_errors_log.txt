@@ -1,0 +1,26 @@
+
+
+C:/Users/student/Desktop/VGA-Camera-01.08.06-basic-YUYVmode-INV-UV-channels-COLUMNFixed-EMPTY/lpm_dff1.vhd
+
+Oct 22 10AM:24:37>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+C:/Users/student/Desktop/VGA-Camera-01.08.06-basic-YUYVmode-INV-UV-channels-COLUMNFixed-EMPTY/lpm_dff1.vhd
+
+Oct 22 10AM:24:48>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+G:/VGA-Camera-01.08.06-basic-YUYVmode-INV-UV-channels-COLUMNFixed-EMPTY/lpm_dff1.vhd
+
+Nov 02 03PM:06:19>: Megafunction LPM_FF is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+C:/Users/student/Desktop/LatestVGA141112/altaccumulate0.vhd
+
+Nov 09 11AM:37:14>: Megafunction ALTACCUMULATE is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted
+
+C:/Users/student/Desktop/LatestVGA141112/altaccumulate0.vhd
+
+Nov 09 01PM:23:30>: Megafunction ALTACCUMULATE is not listed in any 
+wizard.lst file in the specified library path(s).Wizard launch aborted

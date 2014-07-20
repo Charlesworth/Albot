@@ -1,0 +1,57 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity bit_AddDiv is
+	port
+	(in_Bus : in std_logic_vector(7 downto 0);
+	 out_bus : out std_logic_vector(7 downto 0);
+	 WindowEnable : in std_logic;
+	 clk : in std_logic;
+	 U_enable : std_logic;
+	 TrainFlag: in std_logic;
+	 aclr : in std_logic;
+	 AccumulateSIGNAL: in std_logic;
+	 CalculateSIGNAL: in std_logic
+	
+	);
+end bit_AddDiv;
+
+
+architecture str_AddDiv of bit_AddDiv is
+
+begin
+A_BUS: process(in_bus, WindowEnable, clk, U_enable)
+
+begin
+	if (WindowEnable = '1') and (clk = '1') and (U_enable = '1')
+		then 
+			out_bus <= in_bus;
+	end if;
+	
+end Process A_BUS;
+
+TRAINaccumulate: process(clk, TrainFlag, aclr, AccumulateSIGNAL,WindowEnable)
+	begin
+		if (aclr = '1') then
+--HERE
+
+		elsif (clk'event) and (clk='0') then
+		  if (TrainFlag='1')and (AccumulateSIGNAL='1') and (WindowEnable ='1')  then	
+--HERE
+		  end if;
+		end if;
+	end process TRAINaccumulate;	
+
+	TRAINcalculate: process(TrainFlag,CalculateSIGNAL) -- at end of training period do this, but only at start of a frame (and end of Vsync period)
+	begin
+		if (CalculateSIGNAL'event) and (CalculateSIGNAL='1') then  
+		 if (TrainFlag = '1')then
+-- HERE
+		 end if;
+		end if;
+	end process TRAINcalculate;
+	
+end str_AddDiv;
+	
+	
+	

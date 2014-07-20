@@ -1,0 +1,272 @@
+Partition Merge report for VGA-Camera-2006
+Tue Nov 06 16:44:35 2012
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                             ;
++------------------------------------+------------------------------------------------+
+; Partition Merge Status             ; Successful - Tue Nov 06 16:44:35 2012          ;
+; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Full Version ;
+; Revision Name                      ; VGA-Camera-2006                                ;
+; Top-level Entity Name              ; VGA-Camera-2006                                ;
+; Family                             ; Cyclone II                                     ;
+; Total logic elements               ; 915                                            ;
+;     Total combinational functions  ; 493                                            ;
+;     Dedicated logic registers      ; 737                                            ;
+; Total registers                    ; 737                                            ;
+; Total pins                         ; 35                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 20,992                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                                                                    ;
++------------------------------------------------+---------------+-----------+----------------+-------------------+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                                           ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                              ; Details                                                                                                                                                        ;
++------------------------------------------------+---------------+-----------+----------------+-------------------+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; D5_2                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; D5_2                                           ; N/A                                                                                                                                                            ;
+; D6_1                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; D6_1                                           ; N/A                                                                                                                                                            ;
+; D7_1                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; D7_1                                           ; N/A                                                                                                                                                            ;
+; D7_1                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; D7_1                                           ; N/A                                                                                                                                                            ;
+; D7_2                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; D7_2                                           ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|AccumulateSIGNAL            ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|AccumulateSIGNAL~0          ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|AccumulateSIGNAL            ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|AccumulateSIGNAL~0          ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|CalculateSIGNAL             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|u4                          ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|CalculateSIGNAL             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|u4                          ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|FirstROW                    ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|Mux0~1                      ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|FirstROW                    ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|Mux0~1                      ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|LastROW                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|LastROW                     ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|LastROW                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|LastROW                     ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|TrainFLAGsynced             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|u2                          ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|TrainFLAGsynced             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|u2                          ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|TrainFlag                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; debouncer:inst13|u3                            ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|TrainFlag                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; debouncer:inst13|u3                            ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|WindowCOLUMN                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|WindowCOLUMN~4_wirecell     ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|WindowCOLUMN                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|WindowCOLUMN~4_wirecell     ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|WindowROW                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|WindowROW~5_wirecell        ; N/A                                                                                                                                                            ;
+; SyncProcessor:inst|WindowROW                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|WindowROW~5_wirecell        ; N/A                                                                                                                                                            ;
+; UPixelREG[0]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[0] ; N/A                                                                                                                                                            ;
+; UPixelREG[1]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[1] ; N/A                                                                                                                                                            ;
+; UPixelREG[2]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[2] ; N/A                                                                                                                                                            ;
+; UPixelREG[3]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[3] ; N/A                                                                                                                                                            ;
+; UPixelREG[4]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[4] ; N/A                                                                                                                                                            ;
+; UPixelREG[5]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[5] ; N/A                                                                                                                                                            ;
+; UPixelREG[6]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[6] ; N/A                                                                                                                                                            ;
+; UPixelREG[7]                                   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[7] ; N/A                                                                                                                                                            ;
+; UclkEN                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|Mux7~0                      ; N/A                                                                                                                                                            ;
+; VclkEN                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|Mux9~0                      ; N/A                                                                                                                                                            ;
+; Y1clkEN                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|Mux8~0                      ; N/A                                                                                                                                                            ;
+; YclkEN                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SyncProcessor:inst|Mux6~0                      ; N/A                                                                                                                                                            ;
+; bit_AddDiv:inst10|U_enable                     ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|U_enable                     ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|WindowEnable                 ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|WindowEnable                 ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[0]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[0]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[1]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[1]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[2]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[2]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[3]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[3]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[4]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[4]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[5]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[5]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[6]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[6]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[7]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; bit_AddDiv:inst10|out_bus[7]                   ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                            ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[0] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[0] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[1] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[1] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[2] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[2] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[3] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[3] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[4] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[4] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[5] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[5] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[6] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[6] ; N/A                                                                                                                                                            ;
+; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[7] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; lpm_dff1:inst5|lpm_ff:lpm_ff_component|dffs[7] ; N/A                                                                                                                                                            ;
++------------------------------------------------+---------------+-----------+----------------+-------------------+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                    ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top  ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 83   ; 115              ; 726                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total combinational functions               ; 69   ; 105              ; 319                            ; 0                              ;
+; Logic element usage by number of LUT inputs ;      ;                  ;                                ;                                ;
+;     -- 4 input functions                    ; 17   ; 42               ; 111                            ; 0                              ;
+;     -- 3 input functions                    ; 13   ; 41               ; 125                            ; 0                              ;
+;     -- <=2 input functions                  ; 39   ; 22               ; 83                             ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Logic elements by mode                      ;      ;                  ;                                ;                                ;
+;     -- normal mode                          ; 46   ; 101              ; 274                            ; 0                              ;
+;     -- arithmetic mode                      ; 23   ; 4                ; 45                             ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total registers                             ; 53   ; 73               ; 611                            ; 0                              ;
+;     -- Dedicated logic registers            ; 53   ; 73               ; 611                            ; 0                              ;
+;     -- I/O registers                        ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Virtual pins                                ; 0    ; 0                ; 0                              ; 0                              ;
+; I/O pins                                    ; 34   ; 0                ; 1                              ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0    ; 0                ; 0                              ; 0                              ;
+; Total memory bits                           ; 0    ; 0                ; 20992                          ; 0                              ;
+; Total RAM block bits                        ; 0    ; 0                ; 0                              ; 0                              ;
+; JTAG                                        ; 1    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Connections                                 ;      ;                  ;                                ;                                ;
+;     -- Input Connections                    ; 1    ; 112              ; 899                            ; 0                              ;
+;     -- Registered Input Connections         ; 0    ; 82               ; 691                            ; 0                              ;
+;     -- Output Connections                   ; 859  ; 152              ; 1                              ; 0                              ;
+;     -- Registered Output Connections        ; 22   ; 151              ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Internal Connections                        ;      ;                  ;                                ;                                ;
+;     -- Total Connections                    ; 1197 ; 722              ; 3660                           ; 0                              ;
+;     -- Registered Connections               ; 164  ; 546              ; 2630                           ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; External Connections                        ;      ;                  ;                                ;                                ;
+;     -- Top                                  ; 0    ; 104              ; 756                            ; 0                              ;
+;     -- sld_hub:auto_hub                     ; 104  ; 16               ; 144                            ; 0                              ;
+;     -- sld_signaltap:auto_signaltap_0       ; 756  ; 144              ; 0                              ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Partition Interface                         ;      ;                  ;                                ;                                ;
+;     -- Input Ports                          ; 18   ; 18               ; 117                            ; 0                              ;
+;     -- Output Ports                         ; 49   ; 36               ; 70                             ; 0                              ;
+;     -- Bidir Ports                          ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Registered Ports                            ;      ;                  ;                                ;                                ;
+;     -- Registered Input Ports               ; 0    ; 4                ; 64                             ; 0                              ;
+;     -- Registered Output Ports              ; 0    ; 26               ; 1                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Port Connectivity                           ;      ;                  ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 1                ; 20                             ; 0                              ;
+;     -- Output Ports driven by GND           ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 0                ; 35                             ; 0                              ;
+;     -- Output Ports with no Source          ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 1                ; 40                             ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0    ; 14               ; 61                             ; 0                              ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-----------------------------------------------------+
+; Partition Merge Resource Usage Summary              ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 915   ;
+;                                             ;       ;
+; Total combinational functions               ; 493   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 170   ;
+;     -- 3 input functions                    ; 179   ;
+;     -- <=2 input functions                  ; 144   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 421   ;
+;     -- arithmetic mode                      ; 72    ;
+;                                             ;       ;
+; Total registers                             ; 737   ;
+;     -- Dedicated logic registers            ; 737   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 35    ;
+; Total memory bits                           ; 20992 ;
+; Maximum fan-out node                        ; D7_2  ;
+; Maximum fan-out                             ; 447   ;
+; Total fan-out                               ; 4524  ;
+; Average fan-out                             ; 3.45  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                                                                                                       ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_tp14:auto_generated|altsyncram_5eq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 512          ; 41           ; 512          ; 41           ; 20992 ; None ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Partition Merge
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Nov 06 16:44:24 2012
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off VGA-Camera-2006 -c VGA-Camera-2006 --merge=on
+Critical Warning: Setting INCREMENTAL_COMPILATION to "OFF" is no longer supported. Assignment is ignored. To disable partitions, set the IGNORE_PARTITIONS global assignment to "ON" instead.
+Warning: Previously generated Fitter netlist for partition "Top" does not exist -- using previously generated Synthesis netlist instead
+Info: Using synthesis netlist for partition "Top"
+Info: Using synthesis netlist for partition "sld_hub:auto_hub"
+Info: Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Critical Warning: Partially connected in-system debug instance "auto_signaltap_0" to 41 of its 61 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 20 missing sources or connections.
+Info: Resolved and merged 3 partition(s)
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 1018 device resources after synthesis - the final resource count might be different
+    Info: Implemented 18 input pins
+    Info: Implemented 21 output pins
+    Info: Implemented 937 logic cells
+    Info: Implemented 41 RAM segments
+Info: Quartus II Partition Merge was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 286 megabytes
+    Info: Processing ended: Tue Nov 06 16:44:35 2012
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:02
+
+
